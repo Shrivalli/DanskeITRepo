@@ -1,0 +1,176 @@
+Visual Basic and Classic ASP
+
+.NET framework:
+
+IDE - Integrated Development Environment
+
+Versions of Visual Studio -
+VS 2002,2003, 05,08,10,12,13,15,17,19,22
+
+.NET core - 2019 (1.0, 2.0,2.1)
+Vs 2022 - (3.2,5.0, 6.0,7.0)
+
+VS 2022 - Framework
+1. Runtime Environment (CLR - Common Language Runtime)
+2. Languages - c#, J#, F# and Vb.NET
+3. BCL/FCL - Base class Libraries
+
+
+.NET f/w - windows platform
+.NET core - windows, Linux and Mac
+
+Types of Applications that can be created in .NET core:
+
+1. Desktop Applications: - Console Apps(without GUI), Windows/WPF apps (with GUI)
+2. Web Applications- 
+	1. Web APP (website) (Model and View)
+	2. MVC (Model View Controller)
+	3. API (Model Controller) - not have views 
+3. Mobile Applications - Xamarin
+
+A solution is a collection of projects
+A namespace is a collection of classes.
+
+Lab:
+
+1. Create a .NET core console app
+Solution
+Namespace
+Edit CSproj file
+Build Artifacts
+Execute a project in .NET core using VS 2022
+
+2. Creating a .NET core Project with VS code (in Mac, Linux OS)
+
+1.cmd> dotnet new console --name SecondConsoleApp --version 6.0
+2.cmd> cd SecondConsoleApp
+3.cmd> code .
+4.cmd> dotnet build 
+5.cmd> dotnet run
+
+ASP.NET core 
+
+web app and web sites 
+
+Web site - collection of web pages  - web server to host the websites
+ 
+web app - website+ business logic
+
+App server to host the web application - IIS (Internet Information Service)
+
+[
+{"name":"shrivalli","marks":34},
+{"email":"abc@gmail.com","marks":33}
+]
+
+API: 
+
+API return type is Json, Bson or XML.
+API will work only with HTTP Protocol.
+
+
+RESTful
+Representation of State Transfer of an Entity
+
+Entity  - HTTP Verbs - CRUD operation
+
+Add a record - HTTPPost
+Modify a record - HTTPPut
+Delete a record - HTTPDelete
+Fetch list of records  - HTTPGet
+
+Swagger - API Testing cum Documentation tool
+
+postman and Fiddler are API testing tools
+
+
+URL pattern of API:
+
+https://localhost:23345/api/Controllername
+
+localhost: IIS server which is installed in the local machine
+
+Pipelines and Middlewares in program.cs file
+
+
+Status codes:
+https://www.restapitutorial.com/httpstatuscodes.html
+200 - success
+300 - redirection
+400- client side error
+500 - server side error
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
