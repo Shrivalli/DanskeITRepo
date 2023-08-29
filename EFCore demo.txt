@@ -1,0 +1,62 @@
+using EFCoreEg.Models;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Xml;
+
+namespace EFCoreEg.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class EmployeeController : ControllerBase
+    {
+        //public static DanskeItdbContext db = new DanskeItdbContext();
+
+        private readonly DanskeItdbContext _db;
+
+        //Dependency Injection
+        public EmployeeController(DanskeItdbContext db)
+        {
+            _db = db;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAllEmps()
+        {
+            return Ok(await _db.Employees.ToListAsync());
+        }
+
+        [HttpGet]
+        [Route("GetEmpById")]
+        public async Task<IActionResult> GetEmplById(int id)
+        {
+            return Ok(await _db.Employees.SingleOrDefaultAsync(x => x.Empid == id));
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddNewEmployee(Employee e)
+        {
+            _db.Employees.Add(e); //Add the object to the context but not to the db
+            await _db.SaveChangesAsync(); //This method will permenantly make the changes to the db
+            return CreatedAtAction("GetEmplById",new {id=e.Empid},e);
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> EditEmployee(int id, Employee e)
+        {
+           // _db.Entry(e).State = EntityState.Modified;
+            _db.Employees.Update(e);
+            await _db.SaveChangesAsync();
+            return Ok();
+        }
+
+        [HttpDelete]    
+        public async Task<IActionResult> RemoveEmployee(int id)
+        {
+            Employee? e= _db.Employees.SingleOrDefault(x => x.Empid == id);
+            _db.Employees.Remove(e);
+            await _db.SaveChangesAsync();
+            return NoContent();
+        }
+    }
+}
